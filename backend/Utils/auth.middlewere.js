@@ -8,7 +8,7 @@ const userAuthentication = (req,res,next)=>{
           if(decoded){
             const userID = decoded.userID
             req.body.userID = userID
-            nect()
+            next()
           }else{
             res.send(" you are not authenticated login please...")
           }
@@ -16,3 +16,5 @@ const userAuthentication = (req,res,next)=>{
         res.send(" you are not authenticated  login please...")
     }
 }
+
+module.exports = {userAuthentication}

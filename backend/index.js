@@ -1,5 +1,6 @@
 const express = require("express")
 const { connect } = require("./config/db")
+const { postRoute } = require("./route/post.route")
 const { userRoute } = require("./route/user.route")
 const app = express()
 
@@ -10,7 +11,7 @@ app.get("/",(req,res)=>{
 
 app.use(express.json())
 app.use("/user",userRoute)
-
+app.use("/post",postRoute)
 
 
 app.listen(7500,async(req,res)=>{
@@ -19,5 +20,5 @@ app.listen(7500,async(req,res)=>{
       }catch(err){
          console.log(err)
       }
-      console.log( `server run on http://localost:7500`)
+      console.log( `server run on http://localhost:7500`)
 })
