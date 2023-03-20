@@ -4,7 +4,7 @@ const { postRoute } = require("./route/post.route")
 const { userRoute } = require("./route/user.route")
 const cors = require("cors")
 const { fileRoute } = require("./route/image.route")
-const uploads = require("./utils/uploads.js")
+const uploads = require("./Utils/uploads.js")
 const app = express()
 
 app.use(cors())
